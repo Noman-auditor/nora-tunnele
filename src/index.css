@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nora-bg: #06061a;
+  --color-nora-surface: #0d0d2b;
+  --color-nora-card: rgba(255, 255, 255, 0.04);
+  --color-nora-card-hover: rgba(255, 255, 255, 0.07);
+  --color-nora-border: rgba(255, 255, 255, 0.08);
+  --color-nora-border-light: rgba(255, 255, 255, 0.12);
+  --color-nora-accent: #00d4aa;
+  --color-nora-accent-dim: rgba(0, 212, 170, 0.15);
+  --color-nora-purple: #7c5cff;
+  --color-nora-purple-dim: rgba(124, 92, 255, 0.15);
+  --color-nora-connected: #00d4aa;
+  --color-nora-disconnected: #6b7280;
+  --color-nora-error: #ef4444;
+  --color-nora-warning: #f59e0b;
+  --color-nora-text: #f1f5f9;
+  --color-nora-text-secondary: #94a3b8;
+  --color-nora-text-tertiary: #64748b;
+  --color-nora-download: #3b82f6;
+  --color-nora-upload: #8b5cf6;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: #06061a;
+}
+
+body {
+  background: #06061a;
+  color: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-accent {
+  background: rgba(0, 212, 170, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 170, 0.2);
+}
+
+.glass-purple {
+  background: rgba(124, 92, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(124, 92, 255, 0.2);
+}
+
+.glass-error {
+  background: rgba(239, 68, 68, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.glass-warning {
+  background: rgba(245, 158, 11, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.gradient-mesh {
+  background: 
+    radial-gradient(ellipse at 20% 0%, rgba(124, 92, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 0%, rgba(0, 212, 170, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+    #06061a;
+}
+
+.connect-btn {
+  background: linear-gradient(135deg, #00d4aa 0%, #00b894 50%, #00a384 100%);
+  box-shadow: 0 0 30px rgba(0, 212, 170, 0.3), 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+  box-shadow: 0 0 40px rgba(0, 212, 170, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.connect-btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.3), 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.disconnect-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.3), 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.disconnect-btn:hover {
+  box-shadow: 0 0 40px rgba(239, 68, 68, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.status-dot-connected {
+  box-shadow: 0 0 8px rgba(0, 212, 170, 0.6);
+}
+
+.status-dot-error {
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #00d4aa, #7c5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
